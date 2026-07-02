@@ -76,23 +76,24 @@ def encrypt_aes(data: bytes) -> bytes:
 
 def build_major_login(open_id: str, access_token: str, platform_type: int) -> bytes:
     major = MajorLogin()
-    major.event_time = "2025-03-23 12:00:00"
+    # OB54 updated values from payload
+    major.event_time = "2025-11-26 01:51:28"  # Updated
     major.game_name = "free fire"
     major.platform_id = 1
-    major.client_version = "1.120.2"
-    major.system_software = "Android OS 9 / API-28 (PQ3B.190801.10101846/G9650ZHU2ARC6)"
+    major.client_version = "1.126.1"  # Changed: OB54 version
+    major.system_software = "Android OS 9 / API-28 (PI/rel.cjw.20220518.114133)"  # Updated
     major.system_hardware = "Handheld"
-    major.telecom_operator = "Verizon"
+    major.telecom_operator = "MTN/Spacecetal"  # Updated
     major.network_type = "WIFI"
     major.screen_width = 1920
     major.screen_height = 1080
-    major.screen_dpi = "280"
-    major.processor_details = "ARM64 FP ASIMD AES VMH | 2865 | 4"
-    major.memory = 3003
+    major.screen_dpi = "240"  # Updated
+    major.processor_details = "x86-64 SSE3 SSE4.1 SSE4.2 AVX AVX2 | 2400 | 4"  # Updated
+    major.memory = 7910  # Updated
     major.gpu_renderer = "Adreno (TM) 640"
-    major.gpu_version = "OpenGL ES 3.1 v1.46"
-    major.unique_device_id = "Google|34a7dcdf-a7d5-4cb6-8d7e-3b0e448a0c57"
-    major.client_ip = "223.191.51.89"
+    major.gpu_version = "OpenGL ES 3.2"  # Updated
+    major.unique_device_id = "Google|625f7166-91a7-495b-9f16-08fe9d3c6533"  # Updated
+    major.client_ip = "176.28.139.185"  # Updated
     major.language = "en"
     major.open_id = open_id
     major.open_id_type = "4"
@@ -101,32 +102,32 @@ def build_major_login(open_id: str, access_token: str, platform_type: int) -> by
     major.memory_available.hidden_value = 81
     major.access_token = access_token
     major.platform_sdk_id = 1
-    major.network_operator_a = "Verizon"
+    major.network_operator_a = "MTN/Spacecetal"  # Updated
     major.network_type_a = "WIFI"
-    major.client_using_version = "7428b253defc164018c604a1ebbfebdf"
-    major.external_storage_total = 36235
-    major.external_storage_available = 31335
-    major.internal_storage_total = 2519
-    major.internal_storage_available = 703
-    major.game_disk_storage_available = 25010
-    major.game_disk_storage_total = 26628
-    major.external_sdcard_avail_storage = 32992
-    major.external_sdcard_total_storage = 36235
+    major.client_using_version = "1ac4b80ecf0478a44203bf8fac6120f5"  # Updated from payload
+    major.external_storage_total = 47091  # Updated
+    major.external_storage_available = 40784  # Updated
+    major.internal_storage_total = 40784  # Updated
+    major.internal_storage_available = 32080  # Updated
+    major.game_disk_storage_available = 47221  # Updated
+    major.game_disk_storage_total = 32080  # Updated
+    major.external_sdcard_avail_storage = 47221  # Updated
+    major.external_sdcard_total_storage = 32080  # Updated
     major.login_by = 3
-    major.library_path = "/data/app/com.dts.freefireth-YPKM8jHEwAJlhpmhDhv5MQ==/lib/arm64"
+    major.library_path = "/data/app/com.dts.freefireth-fpXCSpHIV6dKC7jL-WOyRA==/lib/arm"  # Updated
     major.reg_avatar = 1
-    major.library_token = "5b892aaabd688e571f688053118a162b|/data/app/com.dts.freefireth-YPKM8jHEwAJlhpmhDhv5MQ==/base.apk"
+    major.library_token = "e62ab9354d8fb5fb081db338acb33491|/data/app/com.dts.freefireth-fpXCSpHIV6dKC7jL-WOyRA==/base.apk"  # Updated
     major.channel_type = 3
     major.cpu_type = 2
-    major.cpu_architecture = "64"
-    major.client_version_code = "2019118695"
+    major.cpu_architecture = "32"  # Updated
+    major.client_version_code = "2019119026"  # Updated
     major.graphics_api = "OpenGLES2"
     major.supported_astc_bitset = 16383
     major.login_open_id_type = 4
-    major.analytics_detail = b"FwQVTgUPX1UaUllDDwcWCRBpWA0FUgsvA1snWlBaO1kFYg=="
-    major.loading_time = 13564
+    major.analytics_detail = b"\x15\x12\x14\x50\x0e\x59\x03\x49\x51\x0e\x46\x09\x00\x11\x58\x43\x39\x5f\x00\x5b\x51\x0f\x68\x5b\x56\x0a\x61\x07\x57\x6d\x0f\x03\x66"  # Updated from payload
+    major.loading_time = 48862  # Updated
     major.release_channel = "android"
-    major.extra_info = "KqsHTymw5/5GB23YGniUYN2/q47GATrq7eFeRatf0NkwLKEMQ0PK5BKEk72dPflAxUlEBir6Vtey83XqF593qsl8hwY="
+    major.extra_info = "KqsHT8W93GdcG3ZozENfFwVHtm7qq1eRUNaIDNgRobozIBtLOiYCc4Y6zvvpcICxzQF2sOE4cbytwLs4xZbRnpRMpmWRQKmeO5vcs8nQYBhwqH7K"  # Updated
     major.android_engine_init_flag = 110009
     major.if_push = 1
     major.is_vpn = 1
@@ -146,7 +147,7 @@ def try_major_login(open_id: str, access_token: str, platform_type: int):
         "Content-Type": "application/x-www-form-urlencoded",
         "X-Unity-Version": "2018.4.11f1",
         "X-GA": "v1 1",
-        "ReleaseVersion": "OB53"
+        "ReleaseVersion": "OB54"
     }
     try:
         resp = requests.post(url, data=encrypted_payload, headers=headers, verify=False, timeout=10)
